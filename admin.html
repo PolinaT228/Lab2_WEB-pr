@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Адміністрування каталогу – Афіша подій SumyEvents</title>
+    <meta name="description" content="Навчальна сторінка адміністративного інтерфейсу для керування елементами каталогу подій.">
+</head>
+<body>
+
+    <!-- Шапка сторінки -->
+    <header>
+        <h1>Афіша подій SumyEvents</h1>
+        <p>Ваш путівник по найцікавіших культурних та освітніх заходах міста.</p>
+        
+        <!-- Навігація між сторінками -->
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="index.html">Каталог подій</a></li>
+                <li><a href="about.html">Про проєкт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Головний вміст -->
+    <main>
+        <article>
+            <header>
+                <h2>Панель адміністратора (Навчальна імітація)</h2>
+            </header>
+            
+            <p>
+                Ця сторінка демонструє інтерфейс адміністратора для керування каталогом подій. 
+                У статичному клієнтському додатку захист доступу відсутній, тому перехід за прямим посиланням є відкритим. 
+                Справжня перевірка прав та збереження даних виконуються на сервері.
+            </p>
+
+            <!-- Таблиця існуючих елементів каталогу -->
+            <section>
+                <h3>Список подій у каталозі</h3>
+                <table>
+                    <caption>Наявні події та швидкі дії для редагування</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Назва події</th>
+                            <th scope="col">Категорія</th>
+                            <th scope="col">Ціна (грн)</th>
+                            <th scope="col">Статус</th>
+                            <th scope="col">Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Концерт рок-гурту "Світло"</th>
+                            <td>Концерт</td>
+                            <td>350</td>
+                            <td>В наявності</td>
+                            <td><a href="admin-edit.html">Редагувати</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Лекція: "Штучний інтелект у сучасному світі"</th>
+                            <td>Лекція</td>
+                            <td>0</td>
+                            <td>В наявності</td>
+                            <td><a href="admin-edit.html">Редагувати</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Виставка живопису "Кольори осені"</th>
+                            <td>Виставка</td>
+                            <td>100</td>
+                            <td>В наявності</td>
+                            <td><a href="admin-edit.html">Редагувати</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Форма додавання нового елемента -->
+            <section>
+                <h3>Додати нову подію</h3>
+                <form action="index.html" method="get">
+                    
+                    <!-- Група 1: Основні дані -->
+                    <fieldset>
+                        <legend>Основні дані події</legend>
+                        
+                        <p>
+                            <label for="event-title">Назва події:</label><br>
+                            <input type="text" id="event-title" name="title" required minlength="3" maxlength="100" autocomplete="off" aria-describedby="title-hint">
+                            <span id="title-hint"><br>Введіть назву від 3 до 100 символів.</span>
+                        </p>
+
+                        <p>
+                            <label for="event-category">Категорія:</label><br>
+                            <select id="event-category" name="category" required>
+                                <option value="">-- Оберіть категорію --</option>
+                                <option value="concert">Концерт</option>
+                                <option value="lecture">Лекція</option>
+                                <option value="exhibition">Виставка</option>
+                                <option value="theater">Театр</option>
+                                <option value="masterclass">Майстер-клас</option>
+                                <option value="festival">Фестиваль</option>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label for="event-code">Код події (артикул):</label><br>
+                            <input type="text" id="event-code" name="eventCode" required pattern="EV-[0-9]{4}" aria-describedby="code-hint">
+                            <span id="code-hint"><br>Формат: EV-XXXX (наприклад, EV-2026).</span>
+                        </p>
+                    </fieldset>
+
+                    <!-- Група 2: Час, ціна та деталі -->
+                    <fieldset>
+                        <legend>Час, місце та опис</legend>
+
+                        <p>
+                            <label for="event-date">Дата і час проведення:</label><br>
+                            <input type="datetime-local" id="event-date" name="eventDate" required>
+                        </p>
+
+                        <p>
+                            <label for="event-price">Ціна квитка (грн):</label><br>
+                            <input type="number" id="event-price" name="price" min="0" max="10000" step="1" required value="0" aria-describedby="price-hint">
+                            <span id="price-hint"><br>Вкажіть суму від 0 до 10000 грн (0 — безкоштовно).</span>
+                        </p>
+
+                        <p>
+                            <label for="event-location">Місце проведення:</label><br>
+                            <input type="text" id="event-location" name="location" required maxlength="150">
+                        </p>
+
+                        <p>
+                            <label for="event-image">Зображення (URL):</label><br>
+                            <input type="url" id="event-image" name="imageUrl" required placeholder="https://example.com/image.jpg" aria-describedby="img-hint">
+                            <span id="img-hint"><br>Введіть пряму абсолютну URL-адресу зображення.</span>
+                        </p>
+
+                        <p>
+                            <label for="event-desc">Повний опис події:</label><br>
+                            <textarea id="event-desc" name="description" rows="4" cols="40" maxlength="500" aria-describedby="desc-hint"></textarea>
+                            <span id="desc-hint"><br>Максимум 500 символів.</span>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input type="checkbox" name="inStock" checked> Є в наявності (квитки доступні)
+                            </label>
+                        </p>
+                    </fieldset>
+
+                    <!-- Кнопки керування формою -->
+                    <p>
+                        <button type="submit">Додати подію</button>
+                        <button type="reset">Очистити форму</button>
+                    </p>
+                </form>
+            </section>
+
+            <p>
+                <a href="index.html">&larr; Повернутися до каталогу подій</a>
+            </p>
+        </article>
+    </main>
+
+    <!-- Підвал сторінки з навчальним посиланням на адмінку -->
+    <footer>
+        <p>Контакти організаторів: <a href="mailto:info@sumyevents.ua">info@sumyevents.ua</a></p>
+        <p><a href="admin.html">Панель адміністратора</a></p>
+        <p>&copy; 2026 Афіша подій. Усі права захищені.</p>
+    </footer>
+
+</body>
+</html>
