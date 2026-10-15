@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Афіша подій міста – Головна</title>
+    <meta name="description" content="Каталог актуальних культурних, освітніх та розважальних подій нашого міста.">
 </head>
 <body>
 
@@ -12,11 +13,10 @@
         <p>Ваш путівник по найцікавіших культурних та освітніх заходах міста.</p>
         
         <!-- Навігація -->
-        <nav>
+        <nav aria-label="Основна навігація">
             <ul>
-                <li><a href="#catalog">Каталог подій</a></li>
-                <li><a href="#about">Про проєкт</a></li>
-                <li><a href="#contacts">Контакти</a></li>
+                <li><a href="index.html" aria-current="page">Каталог подій</a></li>
+                <li><a href="about.html">Про проєкт</a></li>
             </ul>
         </nav>
     </header>
@@ -25,7 +25,7 @@
     <main>
         
         <!-- Персональний опис або розповідь про проєкт -->
-        <article id="about">
+        <article id="about-project">
             <h2>Про нашу платформу</h2>
             <p>Цей вебсайт створено як агрегатор актуальних подій для мешканців та гостей міста. Наша мета — зібрати в одному місці інформацію про найкращі концерти, лекції та виставки, щоб ви завжди могли спланувати своє дозвілля.</p>
         </article>
@@ -38,12 +38,10 @@
             <!-- Картка події 1 -->
             <article class="event-card">
                 <img src="images/event1.jpg" 
-                     srcset="images/concert-small.JPG 480w, images/concert-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Живий виступ рок-гурту на сцені під світлом софітів" 
                      title="Концерт рок-гурту 'Світло'" 
-                     loading="lazy" fetchpriority="high">
-                <h3>Концерт рок-гурту "Світло"</h3>
+                     loading="lazy" fetchpriority="high" width="1024" height="683">
+                <h3><a href="details.html">Концерт рок-гурту "Світло"</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Концерт</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-10-15T19:00">15 жовтня 2026 року, 19:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="350">350 грн</data></p>
@@ -54,12 +52,10 @@
             <!-- Картка події 2 -->
             <article class="event-card">
                 <img src="images/lecture.jpg" 
-                     srcset="images/lecture-small.jpg 480w, images/lecture-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Лектор біля дошки розповідає про штучний інтелект" 
                      title="Лекція про штучний інтелект" 
-                     loading="lazy">
-                <h3>Лекція: "Штучний інтелект у сучасному світі"</h3>
+                     loading="lazy" width="1024" height="683">
+                <h3><a href="details.html">Лекція: "Штучний інтелект у сучасному світі"</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Лекція</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-10-18T15:00">18 жовтня 2026 року, 15:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="0">Безкоштовно</data></p>
@@ -70,12 +66,10 @@
             <!-- Картка події 3 -->
             <article class="event-card">
                 <img src="images/exhibition.jpg" 
-                     srcset="images/exhibition-small.jpg 480w, images/exhibition-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Картини сучасних художників у виставковій залі" 
                      title="Виставка сучасного мистецтва" 
-                     loading="lazy">
-                <h3>Виставка живопису "Кольори осені"</h3>
+                     loading="lazy" width="1024" height="683">
+                <h3><a href="details.html">Виставка живопису "Кольори осені"</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Виставка</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-10-22T10:00">22 жовтня 2026 року, 10:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="100">100 грн</data></p>
@@ -86,12 +80,10 @@
             <!-- Картка події 4 -->
             <article class="event-card">
                 <img src="images/theater.jpg" 
-                     srcset="images/theater-small.jpg 480w, images/theater-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Актори на театральній сцені під час вистави" 
                      title="Театральна вистава 'За двома зайцями'" 
-                     loading="lazy">
-                <h3>Комедійна вистава "За двома зайцями"</h3>
+                     loading="lazy" width="1024" height="683">
+                <h3><a href="details.html">Комедійна вистава "За двома зайцями"</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Театр</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-10-25T18:00">25 жовтня 2026 року, 18:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="250">250 грн</data></p>
@@ -102,12 +94,10 @@
             <!-- Картка події 5 -->
             <article class="event-card">
                 <img src="images/masterclass.jpg" 
-                     srcset="images/masterclass-small.jpg 480w, images/masterclass-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Люди ліплять керамічні вироби за столом" 
                      title="Майстер-клас з кераміки" 
-                     loading="lazy">
-                <h3>Майстер-клас з гончарного мистецтва</h3>
+                     loading="lazy" width="1024" height="683">
+                <h3><a href="details.html">Майстер-клас з гончарного мистецтва</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Майстер-клас</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-10-28T14:00">28 жовтня 2026 року, 14:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="400">400 грн</data></p>
@@ -118,17 +108,15 @@
             <!-- Картка події 6 -->
             <article class="event-card">
                 <img src="images/festival.jpg" 
-                     srcset="images/festival-small.jpg 480w, images/festival-large.jpg 1024w" 
-                     sizes="(max-width: 600px) 480w, 1024w" 
                      alt="Натовп людей на міському фестивалі під відкритим небом" 
                      title="Гастрономічний фестиваль" 
-                     loading="lazy">
-                <h3>Міський вуличний фестиваль їжі</h3>
+                     loading="lazy" width="1024" height="683">
+                <h3><a href="details.html">Міський вуличний фестиваль їжі</a></h3>
                 <p><strong>Категорія:</strong> <span class="category">Фестиваль</span></p>
                 <p><strong>Дата проведення:</strong> <time datetime="2026-11-01T12:00">1 листопада 2026 року, 12:00</time></p>
                 <p><strong>Ціна квитка:</strong> <data value="50">50 грн</data></p>
                 <p><strong>Місце:</strong> Парк імені Казаманова</p>
-                <p>Дегустація страв від найкращих локальних ресторанів, фудтраки, жива музика та розваги для всієї родини.</p>
+                <p>Дегустація страв від найкращих ресторанів, фудтраки, жива музика та розваги для всієї родини.</p>
             </article>
 
         </section>
