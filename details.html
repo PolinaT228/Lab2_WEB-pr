@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Деталі події – Афіша подій SumyEvents</title>
-    <meta name="description" content="Детальна інформація про концерт рок-гурту 'Світло', розклад виступу та характеристика події.">
+    <meta name="description" content="Детальна інформація про концерт рок-гурту 'Світло', розклад виступу та форма відгуку/реєстрації відвідувача.">
 </head>
 <body>
 
@@ -57,6 +57,7 @@
                     <li><a href="#description">Про подію</a></li>
                     <li><a href="#characteristics">Характеристики</a></li>
                     <li><a href="#schedule">Розклад вечора</a></li>
+                    <li><a href="#feedback">Залишити відгук та квитки</a></li>
                 </ul>
             </nav>
 
@@ -128,8 +129,75 @@
                 </table>
             </section>
 
+            <!-- Форма відгуку та реєстрації відвідувача -->
+            <section id="feedback" aria-labelledby="feedback-title">
+                <h2 id="feedback-title">Реєстрація та відгук на подію</h2>
+                <form action="details.html" method="get">
+                    
+                    <!-- Контактні дані відвідувача -->
+                    <fieldset>
+                        <legend>Ваші контактні дані</legend>
+
+                        <p>
+                            <label for="visitor-name">Ваше ім'я:</label><br>
+                            <input type="text" id="visitor-name" name="visitorName" required autocomplete="name" placeholder="Олена">
+                        </p>
+
+                        <p>
+                            <label for="visitor-email">Електронна пошта:</label><br>
+                            <input type="email" id="visitor-email" name="visitorEmail" required autocomplete="email" placeholder="example@domain.com">
+                        </p>
+
+                        <p>
+                            <label for="visitor-tel">Номер телефону:</label><br>
+                            <input type="tel" id="visitor-tel" name="visitorTel" autocomplete="tel" aria-describedby="tel-hint" placeholder="+380XXXXXXXXX">
+                            <span id="tel-hint"><br>Необов'язково. Формат: +380...</span>
+                        </p>
+                    </fieldset>
+
+                    <!-- Деталі відвідування та оцінка -->
+                    <fieldset>
+                        <legend>Деталі замовлення та оцінка</legend>
+
+                        <p>
+                            <label for="tickets-count">Кількість квитків:</label><br>
+                            <input type="number" id="tickets-count" name="ticketsCount" min="1" max="10" value="1" required aria-describedby="tickets-hint">
+                            <span id="tickets-hint"><br>Від 1 до 10 квитків в одні руки.</span>
+                        </p>
+
+                        <!-- Група радіокнопок для оцінки -->
+                        <fieldset>
+                            <legend>Оцініть очікування від події (від 1 до 5):</legend>
+                            <label><input type="radio" name="rating" value="1" required> 1</label>
+                            <label><input type="radio" name="rating" value="2"> 2</label>
+                            <label><input type="radio" name="rating" value="3"> 3</label>
+                            <label><input type="radio" name="rating" value="4"> 4</label>
+                            <label><input type="radio" name="rating" value="5"> 5</label>
+                        </fieldset>
+
+                        <p>
+                            <label for="visitor-comment">Коментар або відгук:</label><br>
+                            <textarea id="visitor-comment" name="visitorComment" rows="3" cols="30" minlength="5" maxlength="300" aria-describedby="comment-hint"></textarea>
+                            <span id="comment-hint"><br>Від 5 до 300 символів.</span>
+                        </p>
+
+                        <p>
+                            <label>
+                                <input type="checkbox" name="agreed" required> Погоджуюся з правилами обробки даних та публікації відгуків
+                            </label>
+                        </p>
+                    </fieldset>
+
+                    <!-- Кнопка надсилання -->
+                    <p>
+                        <button type="submit">Надіслати відгук</button>
+                    </p>
+                </form>
+            </section>
+
             <!-- Посилання повернення до каталогу -->
             <p>
+                <br>
                 <a href="index.html">&larr; Повернутися до загального каталогу подій</a>
             </p>
         </article>
@@ -138,6 +206,7 @@
     <!-- Підвал сторінки -->
     <footer>
         <p>Контакти організаторів: <a href="mailto:info@sumyevents.ua">info@sumyevents.ua</a></p>
+        <p><a href="admin.html">Панель адміністратора</a></p>
         <p>&copy; 2026 Афіша подій. Усі права захищені.</p>
     </footer>
 
