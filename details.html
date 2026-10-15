@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі події – Афіша подій SumyEvents</title>
+    <meta name="description" content="Детальна інформація про концерт рок-гурту 'Світло', розклад виступу та характеристика події.">
+</head>
+<body>
+
+    <!-- Шапка сторінки -->
+    <header>
+        <h1>Афіша подій SumyEvents</h1>
+        <p>Ваш путівник по найцікавіших культурних та освітніх заходах міста.</p>
+        
+        <!-- Навігація між сторінками -->
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="index.html">Каталог подій</a></li>
+                <li><a href="about.html">Про проєкт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Хлібні крихти -->
+    <nav aria-label="Хлібні крихти">
+        <ol>
+            <li><a href="index.html">Головна (Каталог)</a></li>
+            <li><a href="index.html#catalog">Концерти</a></li>
+            <li aria-current="page">Концерт рок-гурту "Світло"</li>
+        </ol>
+    </nav>
+
+    <!-- Головний вміст сторінки деталей -->
+    <main>
+        <article>
+            <header>
+                <h2>Концерт рок-гурту "Світло"</h2>
+            </header>
+
+            <!-- Зображення через picture з двома форматами -->
+            <figure>
+                <picture>
+                    <source type="image/avif" srcset="images/concert.avif">
+                    <source type="image/webp" srcset="images/concert.webp">
+                    <img src="images/event1.jpg" 
+                         alt="Живий виступ рок-гурту на сцені під світлом яскравих софітів" 
+                         title="Концерт рок-гурту 'Світло'" 
+                         width="1024" height="683" fetchpriority="high">
+                </picture>
+                <figcaption>Атмосфера наживо під час виступу гурту "Світло"</figcaption>
+            </figure>
+
+            <!-- Внутрішня навігація (якорі) -->
+            <nav aria-label="На цій сторінці">
+                <h3>На цій сторінці:</h3>
+                <ul>
+                    <li><a href="#description">Про подію</a></li>
+                    <li><a href="#characteristics">Характеристики</a></li>
+                    <li><a href="#schedule">Розклад вечора</a></li>
+                </ul>
+            </nav>
+
+            <!-- Повний опис події -->
+            <section id="description">
+                <h2>Про подію</h2>
+                <p>
+                    Це грандіозна подія цієї осені для всіх поціновувачів якісної української рок-музики. 
+                    Гурт <strong>"Світло"</strong> повертається на велику сцену з новим альбомом, який поєднує в собі драйвові гітарні рифи та глибокі ліричні тексти.
+                </p>
+                <p>
+                    На вас чекає незабутнє світлове шоу, живий звук та особлива атмосфера єднання. 
+                    <em>Кількість квитків обмежена</em>, тому радимо подбати про них заздалегідь.
+                </p>
+            </section>
+
+            <!-- Список визначень з характеристиками -->
+            <section id="characteristics">
+                <h2>Характеристики події</h2>
+                <dl>
+                    <div>
+                        <dt>Категорія:</dt>
+                        <dd>Концерт / Музична подія</dd>
+                    </div>
+                    <div>
+                        <dt>Ціна квитка:</dt>
+                        <dd><data value="350">350 грн</data></dd>
+                    </div>
+                    <div>
+                        <dt>Дата проведення:</dt>
+                        <dd><time datetime="2026-10-15T19:00">15 жовтня 2026 року, 19:00</time></dd>
+                    </div>
+                    <div>
+                        <dt>Статус квитків:</dt>
+                        <dd>У продажу є вільні місця</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <!-- Таблиця даних (розклад вечора) -->
+            <section id="schedule">
+                <h2>Розклад вечора</h2>
+                <table>
+                    <caption>Програма та таймінг концерту гурту "Світло"</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Час (у часовому форматі)</th>
+                            <th scope="col">Частина програми</th>
+                            <th scope="col">Локація / Деталі</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><time datetime="18:00">18:00</time></th>
+                            <td>Відкриття дверей</td>
+                            <td>Збір гостей, фан-зона та мерч</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><time datetime="19:00">19:00</time></th>
+                            <td>Виступ розігріву</td>
+                            <td>Гість вечора: гурт "Медіа"</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><time datetime="20:00">20:00</time></th>
+                            <td>Основний виступ</td>
+                            <td>Концерт гурту "Світло" (презентація альбому)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Посилання повернення до каталогу -->
+            <p>
+                <a href="index.html">&larr; Повернутися до загального каталогу подій</a>
+            </p>
+        </article>
+    </main>
+
+    <!-- Підвал сторінки -->
+    <footer>
+        <p>Контакти організаторів: <a href="mailto:info@sumyevents.ua">info@sumyevents.ua</a></p>
+        <p>&copy; 2026 Афіша подій. Усі права захищені.</p>
+    </footer>
+
+</body>
+</html>
