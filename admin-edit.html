@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагування події – Афіша подій SumyEvents</title>
+    <meta name="description" content="Сторінка редагування існуючого елемента каталогу подій.">
+</head>
+<body>
+
+    <!-- Шапка сторінки -->
+    <header>
+        <h1>Афіша подій SumyEvents</h1>
+        <p>Ваш путівник по найцікавіших культурних та освітніх заходах міста.</p>
+        
+        <!-- Навігація між сторінками -->
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="index.html">Каталог подій</a></li>
+                <li><a href="about.html">Про проєкт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Хлібні крихти -->
+    <nav aria-label="Хлібні крихти">
+        <ol>
+            <li><a href="admin.html">Адміністрування</a></li>
+            <li aria-current="page">Редагування: Концерт рок-гурту "Світло"</li>
+        </ol>
+    </nav>
+
+    <!-- Головний вміст -->
+    <main>
+        <article>
+            <header>
+                <h2>Редагування події</h2>
+            </header>
+            
+            <p>
+                Змініть необхідні поля у формі нижче для оновлення інформації про подію в каталозі.
+            </p>
+
+            <!-- Форма редагування елемента -->
+            <form action="admin.html" method="get">
+                
+                <!-- Приховане поле з ідентифікатором елемента -->
+                <input type="hidden" name="eventId" value="101">
+
+                <!-- Група 1: Основні дані -->
+                <fieldset>
+                    <legend>Основні дані події</legend>
+                    
+                    <p>
+                        <label for="event-title">Назва події:</label><br>
+                        <input type="text" id="event-title" name="title" required minlength="3" maxlength="100" value="Концерт рок-гурту &quot;Світло&quot;" autocomplete="off" aria-describedby="title-hint">
+                        <span id="title-hint"><br>Введіть назву від 3 до 100 символів.</span>
+                    </p>
+
+                    <p>
+                        <label for="event-category">Категорія:</label><br>
+                        <select id="event-category" name="category" required>
+                            <option value="">-- Оберіть категорію --</option>
+                            <option value="concert" selected>Концерт</option>
+                            <option value="lecture">Лекція</option>
+                            <option value="exhibition">Виставка</option>
+                            <option value="theater">Театр</option>
+                            <option value="masterclass">Майстер-клас</option>
+                            <option value="festival">Фестиваль</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="event-code">Код події (артикул):</label><br>
+                        <input type="text" id="event-code" name="eventCode" required pattern="EV-[0-9]{4}" value="EV-2026" aria-describedby="code-hint">
+                        <span id="code-hint"><br>Формат: EV-XXXX (наприклад, EV-2026).</span>
+                    </p>
+                </fieldset>
+
+                <!-- Група 2: Час, ціна та деталі -->
+                <fieldset>
+                    <legend>Час, місце та опис</legend>
+
+                    <p>
+                        <label for="event-date">Дата і час проведення:</label><br>
+                        <input type="datetime-local" id="event-date" name="eventDate" required value="2026-10-15T19:00">
+                    </p>
+
+                    <p>
+                        <label for="event-price">Ціна квитка (грн):</label><br>
+                        <input type="number" id="event-price" name="price" min="0" max="10000" step="1" required value="350" aria-describedby="price-hint">
+                        <span id="price-hint"><br>Вкажіть суму від 0 до 10000 грн (0 — безкоштовно).</span>
+                    </p>
+
+                    <p>
+                        <label for="event-location">Місце проведення:</label><br>
+                        <input type="text" id="event-location" name="location" required maxlength="150" value="Клуб &quot;Мантра&quot;, вул. Соборна, 12">
+                    </p>
+
+                    <p>
+                        <label for="event-image">Зображення (URL):</label><br>
+                        <input type="url" id="event-image" name="imageUrl" required value="https://example.com/images/event1.jpg" aria-describedby="img-hint">
+                        <span id="img-hint"><br>Введіть пряму абсолютну URL-адресу зображення.</span>
+                    </p>
+
+                    <p>
+                        <label for="event-desc">Повний опис події:</label><br>
+                        <textarea id="event-desc" name="description" rows="4" cols="40" maxlength="500" aria-describedby="desc-hint">Великий сольний концерт гурту з презентацією нового альбому та світловим шоу.</textarea>
+                        <span id="desc-hint"><br>Максимум 500 символів.</span>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input type="checkbox" name="inStock" checked> Є в наявності (квитки доступні)
+                        </label>
+                    </p>
+                </fieldset>
+
+                <!-- Кнопки керування формою -->
+                <p>
+                    <button type="submit">Зберегти зміни</button>
+                    <button type="reset">Скасувати зміни</button>
+                </p>
+            </form>
+
+            <p>
+                <a href="admin.html">&larr; Повернутися до панелі адміністратора</a>
+            </p>
+        </article>
+    </main>
+
+    <!-- Підвал сторінки -->
+    <footer>
+        <p>Контакти організаторів: <a href="mailto:info@sumyevents.ua">info@sumyevents.ua</a></p>
+        <p><a href="admin.html">Панель адміністратора</a></p>
+        <p>&copy; 2026 Афіша подій. Усі права захищені.</p>
+    </footer>
+
+</body>
+</html>
